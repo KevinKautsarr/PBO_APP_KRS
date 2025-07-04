@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- Ini adalah file FXML untuk tampilan menu utama aplikasi -->
+<!-- Controller yang terkait adalah com.dinus.MenuController -->
+
+<BorderPane prefHeight="700" prefWidth="1020" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dinus.MenuController">
+   <center>
+      <!-- StackPane ini akan digunakan sebagai area konten yang dapat diubah (misal: memuat Dosen.fxml) -->
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="870.0">
+         <children>
+            <StackPane fx:id="contentArea" prefHeight="600.0" prefWidth="870.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <!-- Header aplikasi -->
+      <Pane prefHeight="63.0" prefWidth="1070.0" style="-fx-background-color: navy;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="8.0" text="Dashboard" textFill="#f8f7f7">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <!-- Label untuk menampilkan informasi user yang login -->
+            <Label fx:id="lbTeks" layoutX="14.0" layoutY="36.0" prefHeight="21.0" prefWidth="267.0" text="-" textFill="#f5f2f2">
+               <font>
+                  <Font name="Arial" size="14" />
+               </font>
+            </Label>
+            <!-- Tombol Logout -->
+            <Button fx:id="btnLogout" layoutX="980.0" layoutY="8.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#logout" prefHeight="49.0" prefWidth="84.0" style="-fx-background-color: darkBlue;" text="Logout" textAlignment="CENTER" textFill="#faf9fc">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Pane>
+   </top>
+   <left>
+      <!-- Panel navigasi di sisi kiri -->
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="3.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" spacing="3.0">
+               <children>
+                  <!-- Tombol navigasi untuk berbagai fitur -->
+                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#homee" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="Home" textFill="#f5ebeb">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMhs" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#mhs" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="Mhs" textFill="#fffafa">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMatkul" layoutX="10.0" layoutY="51.0" mnemonicParsing="false" onAction="#matkul" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="Matakuliah" textFill="#fffbfb">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnJadwal" layoutX="10.0" layoutY="92.0" mnemonicParsing="false" onAction="#jadwal" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="Jadwal" textFill="#f8f3f3">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnKrs" layoutX="10.0" layoutY="92.0" mnemonicParsing="false" onAction="#krs" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="KRS" textFill="#f8f3f3">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <!-- Tombol untuk Dosen, yang akan memuat Dosen.fxml -->
+                  <Button fx:id="btnDosen" layoutX="10.0" layoutY="92.0" mnemonicParsing="false" onAction="#dosen" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="Dosen" textFill="#f8f3f3">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSelesai" layoutX="10.0" layoutY="92.0" mnemonicParsing="false" onAction="#selesai" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: DodgerBlue;" text="Selesai" textFill="#f8f3f3">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

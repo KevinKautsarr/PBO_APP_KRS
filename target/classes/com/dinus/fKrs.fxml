@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.dinus.KrsController" prefHeight="558.0" prefWidth="735.0">
+   <children>
+      <VBox alignment="TOP_CENTER" spacing="10.0" prefHeight="558.0" prefWidth="735.0">
+         <children>
+
+            <!-- Header -->
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="734.0" style="-fx-background-color: Blue;" text="Data KRS Mahasiswa" textFill="#f8f3f3">
+               <font>
+                  <Font name="Bradley Hand ITC" size="27.0" />
+               </font>
+            </Label>
+
+            <!-- Search -->
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="Cari NIM/Kode MK" />
+                  <TextField fx:id="tfCari" prefWidth="300.0" />
+               </children>
+               <padding>
+                  <Insets top="10" bottom="10" left="10" right="10" />
+               </padding>
+            </HBox>
+
+            <!-- Table -->
+            <TableView fx:id="tvKrs" prefHeight="200.0" prefWidth="700.0">
+               <columns>
+                  <TableColumn fx:id="colKodeMk" prefWidth="100.0" text="Kode MK" />
+                  <TableColumn fx:id="colKelas" prefWidth="100.0" text="Kelas" />
+                  <TableColumn fx:id="colNim" prefWidth="250.0" text="NIM" />
+                  <TableColumn fx:id="colStatus" prefWidth="250.0" text="Status" />
+               </columns>
+            </TableView>
+
+            <!-- Form Input -->
+            <GridPane hgap="10" vgap="10" alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" />
+                  <ColumnConstraints prefWidth="300" />
+               </columnConstraints>
+
+               <children>
+                  <Label text="Kode MK" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                  <TextField fx:id="tfKodeMk" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                  <Label text="Kelas" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                  <TextField fx:id="tfKelas" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                  <Label text="NIM" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                  <TextField fx:id="tfNim" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                  <Label text="Status" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                  <TextField fx:id="tfStatus" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+               </children>
+               <padding>
+                  <Insets top="10" />
+               </padding>
+            </GridPane>
+
+            <!-- Tombol Aksi -->
+            <HBox spacing="10" alignment="CENTER">
+               <children>
+                  <Button fx:id="btnAdd" text="Add" onAction="#addKrs" style="-fx-background-color: navy;" textFill="white" />
+                  <Button fx:id="btnEdit" text="Edit" onAction="#editKrs" style="-fx-background-color: navy;" textFill="white" />
+                  <Button fx:id="btnDel" text="Delete" onAction="#deleteKrs" style="-fx-background-color: navy;" textFill="white" />
+                  <Button fx:id="btnUpdate" text="Update" onAction="#updateKrs" style="-fx-background-color: navy;" textFill="white" />
+                  <Button fx:id="btnCancel" text="Cancel" onAction="#cancelAction" style="-fx-background-color: navy;" textFill="white" />
+               </children>
+            </HBox>
+
+            <!-- Info Label -->
+            <Label fx:id="lblInfo" alignment="CENTER" prefHeight="38.0" prefWidth="734.0" style="-fx-background-color: LightBlue;" textFill="#ee340a">
+               <font>
+                  <Font name="Bradley Hand ITC" size="20.0" />
+               </font>
+            </Label>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
